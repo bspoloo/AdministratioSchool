@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using AutoMapper;
 using AdministratioSchool.Domain.DTO.Out;
+using AdministratioSchool.Infraestructure.Security;
 
 namespace AdministratioSchool.Application.Services
 {
@@ -38,6 +39,7 @@ namespace AdministratioSchool.Application.Services
         public async Task<User> CreateUser([FromBody] UserInDTO userInDTO)
         {
             var user = _mapper.Map<User>(userInDTO);
+            user.Password = Encrypt.EncryptPassword(user.Password);
 
             _context.Users.Add(user);
 
@@ -48,6 +50,8 @@ namespace AdministratioSchool.Application.Services
         public async Task<User> UpdateUser(int id, [FromBody] UserInDTO userInDTO)
         {
             var user = await _context.Users.FindAsync(id);
+            string password = Encrypt.EncryptPassword(userInDTO.Password);
+            user.Password = password;
 
             if (user == null)
             {
