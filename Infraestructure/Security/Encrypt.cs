@@ -8,7 +8,10 @@
             {
                 return password;
             }
-            return BCrypt.Net.BCrypt.HashPassword(password);
+            else
+            {
+                return BCrypt.Net.BCrypt.HashPassword(password);
+            }
         }
     }
 }

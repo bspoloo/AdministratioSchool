@@ -50,14 +50,12 @@ namespace AdministratioSchool.Application.Services
         public async Task<User> UpdateUser(int id, [FromBody] UserInDTO userInDTO)
         {
             var user = await _context.Users.FindAsync(id);
-            string password = Encrypt.EncryptPassword(userInDTO.Password);
-            user.Password = password;
+            userInDTO.Password = Encrypt.EncryptPassword(userInDTO.Password);
 
             if (user == null)
             {
                 throw new KeyNotFoundException("User not founded with Id:" + id);
             }
-
             _mapper.Map(userInDTO, user);
 
             await _context.SaveChangesAsync();

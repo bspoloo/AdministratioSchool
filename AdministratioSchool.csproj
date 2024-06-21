@@ -34,7 +34,6 @@
     <Folder Include="Domain\Services\" />
     <Folder Include="Domain\Repositories\" />
     <Folder Include="Infraestructure\Configurations\" />
-    <Folder Include="Presentation\App\" />
     <Folder Include="Test\" />
   </ItemGroup>
 
