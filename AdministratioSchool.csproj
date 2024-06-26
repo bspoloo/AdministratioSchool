@@ -30,9 +30,7 @@
   <ItemGroup>
     <Folder Include="Application\Contracts\" />
     <Folder Include="Application\Mappers\" />
-    <Folder Include="Application\Services\" />
     <Folder Include="Domain\Services\" />
-    <Folder Include="Domain\Repositories\" />
     <Folder Include="Infraestructure\Configurations\" />
     <Folder Include="Test\" />
   </ItemGroup>

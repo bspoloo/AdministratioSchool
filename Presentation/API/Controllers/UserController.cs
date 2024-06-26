@@ -1,7 +1,7 @@
-﻿using AdministratioSchool.Application.Services;
-using AdministratioSchool.Domain.DTO.In;
+﻿using AdministratioSchool.Domain.DTO.In;
 using AdministratioSchool.Domain.DTO.Out;
 using AdministratioSchool.Domain.Entities;
+using AdministratioSchool.Domain.Services;
 using AdministratioSchool.Infraestructure.Persistence.Contex;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
